@@ -1,6 +1,6 @@
-import {InfoAccount} from './InfoAccount'
+import {InfoAccountLogin} from './InfoAccountLogin'
 import {InfoForgetPassword} from './InfoForgetPassword'
 import {InputForm} from './InputForm'
 import {SubmitButton} from './SubmitButton'
-
-export {InfoAccount , InfoForgetPassword , InputForm , SubmitButton}
+import { InfoAccountRegister } from './InfoAccountRegister'
+export {InfoAccountLogin , InfoForgetPassword , InputForm , SubmitButton, InfoAccountRegister}

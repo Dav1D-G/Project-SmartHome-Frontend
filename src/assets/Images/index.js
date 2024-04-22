@@ -1,0 +1,10 @@
+import user from './login/user.svg'
+import lock from './login/lock.svg'
+import mail from './login/mail.svg'
+import login from './login/log-in.svg'
+import ID from './dashboard/ID.svg'
+import burger_menu from './dashboard/burger-menu.svg'
+import log_out from './dashboard/log-out.svg'
+import dashboard from './dashboard/dashboard.svg'
+import settings from './dashboard/settings.svg'
+export {user , lock , login, mail, ID , burger_menu , log_out , dashboard, settings};

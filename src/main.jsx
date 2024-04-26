@@ -9,7 +9,9 @@ import { Register } from "./components/organism/Auth/Register.jsx";
 import { ForgetPassword } from "./components/organism/Auth/ForgetPassword.jsx";
 import { ResetPassword } from "./components/organism/Auth/ResetPassword.jsx";
 import { Homepage } from "./pages/Homepage.jsx";
-import {Main} from './components/organism/Home/Main.jsx'
+import { Main } from "./components/organism/Home/Main.jsx";
+import { RegisterDevice } from "./components/organism/Home/RegisterDevice.jsx";
+import { SelectDevice } from "./components/organism/Home/SelectDevice.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,17 +37,21 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path : '/homepage',
-    element  : <Homepage/>,
-    children : [
+    path: "/homepage",
+    element: <Homepage />,
+    children: [
       {
-        path : '',
-        element : <Main/>
+        path: "",
+        element: <SelectDevice />,
       },
-      // {
-      //   path : '',
-      //   element : <RegisterDevice/> 
-      // },
+      {
+        path: "/homepage/RegisterDevice",
+        element: <RegisterDevice />,
+      },
+      {
+        path: "/homepage/Main",
+        element: <Main />,
+      },
       // {
       //   path : '',
       //   element : <Sensor/>
@@ -62,7 +68,7 @@ const router = createBrowserRouter([
       //   path : '',
       //   element : <Light/>
       // },
-    ]
+    ],
   },
   // {
   //   path : '*',

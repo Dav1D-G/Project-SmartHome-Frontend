@@ -1,2 +1,3 @@
 import { NavBarOption } from "./NavBarOption";
-export {NavBarOption}
+import { AsideMenuOption } from "./AsideMenuOption";
+export {NavBarOption, AsideMenuOption}

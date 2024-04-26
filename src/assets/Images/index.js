@@ -7,4 +7,12 @@ import burger_menu from './dashboard/burger-menu.svg'
 import log_out from './dashboard/log-out.svg'
 import dashboard from './dashboard/dashboard.svg'
 import settings from './dashboard/settings.svg'
-export {user , lock , login, mail, ID , burger_menu , log_out , dashboard, settings};
+import Temperature from './dashboard/Temperature.svg'
+import Humidity from './dashboard/Humidity.svg'
+import Camera from './dashboard/Camera.svg'
+import Gate from './dashboard/Gate.svg'
+import Lock from './dashboard/Lock.svg'
+import Light from './dashboard/Light.svg'
+import plus from './dashboard/plus.svg'
+import control_panel from './dashboard/control_panel.svg'
+export {user , lock , login, mail, ID , burger_menu , log_out , dashboard, settings, Temperature, Humidity, Camera, Gate, Light, Lock, plus, control_panel};

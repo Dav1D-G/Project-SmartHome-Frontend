@@ -1,4 +1,5 @@
 import { AsideMenu } from "./AsideMenu";
 import { NavBarMobile } from "./NavBarMobile";
 import { NavBar } from "./NavBar";
-export {AsideMenu , NavBarMobile , NavBar};
+import { ClickableSVGBox } from "./ClickableSVGBox"
+export {AsideMenu , NavBarMobile , NavBar, ClickableSVGBox};

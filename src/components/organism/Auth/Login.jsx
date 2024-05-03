@@ -1,35 +1,28 @@
-<<<<<<< HEAD
-import { Flex, Box, Text , Input } from "@chakra-ui/react";
+import { Flex, Box, Text, Input } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { user, lock, login } from "../../../assets/Images/index.js";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { useCookies } from "react-cookie";
-import { loginUser } from './../../../api/index.js'
+import { loginUser } from "./../../../api/index.js";
 import { Navigate } from "react-router-dom";
-=======
-import { Flex, Box, Text } from "@chakra-ui/react";
-import { user, lock, login } from "../../../assets/Images/index.js";
->>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
 import {
   InfoAccountLogin,
   SubmitButton,
   InfoForgetPassword,
   InputForm,
-<<<<<<< HEAD
   Loader,
-  InfoAlert
+  InfoAlert,
 } from "./../../molecule/Auth/index.js";
 
 export function Login() {
-
   // Method for performing a request to api
   const { isPending, mutate } = useMutation({
     mutationFn: loginUser,
     onSuccess: (data) => {
-      const {payload} = data;
+      const { payload } = data;
       const { token } = payload;
-      console.log(token)
+      console.log(token);
       setCookie("access-token", token);
       setIsLogin(true);
     },
@@ -39,11 +32,11 @@ export function Login() {
     },
   });
 
-  const [isLogin , setIsLogin] = useState(false);
-  const [errorMessage , setErrorMessage ] = useState("");
+  const [isLogin, setIsLogin] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [isError, setIsError] = useState(false);
   const { register, handleSubmit, formState } = useForm();
-  const [cookies, setCookie, removeCookie] = useCookies(['cookie-name']);
+  const [cookies, setCookie, removeCookie] = useCookies(["cookie-name"]);
   const { errors } = formState;
 
   // Method for submiting form
@@ -51,28 +44,19 @@ export function Login() {
     mutate(data);
   };
 
-  // Effect for clearing error message 
+  // Effect for clearing error message
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsError(false);
       setErrorMessage("");
     }, 3000);
     return () => clearTimeout(timeoutId);
-  }, [isError , errorMessage]);
-
+  }, [isError, errorMessage]);
 
   return (
     <Flex flex={1} justifyContent="space-around" marginTop={10}>
       {/* START OF FORM */}
-      {isError && <InfoAlert message={errorMessage} status="error"/>}
-=======
-} from "./../../molecule/Auth/index.js";
-
-export function Login() {
-  return (
-    <Flex flex={1} justifyContent="space-around" marginTop={10}>
-      {/* START OF FORM */}
->>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
+      {isError && <InfoAlert message={errorMessage} status="error" />}
       <Flex
         width={{ base: "90%", sm: "80%", md: "60%", lg: "50%", xl: "40%" }}
         borderRadius={"xl"}
@@ -102,11 +86,10 @@ export function Login() {
             </Text>
           </Box>
         </Flex>
-<<<<<<< HEAD
         <form onSubmit={handleSubmit(onSubmit)}>
           <Flex flexDirection={"column"} p={5}>
             <InputForm image={user} text="Username or Email">
-                <Input
+              <Input
                 type="email"
                 width={{ base: "100%" }}
                 variant="flushed"
@@ -114,10 +97,10 @@ export function Login() {
                 focusBorderColor="blue.300"
                 {...register("email", { required: true, maxLength: 30 })}
                 isInvalid={errors.email ? true : false}
-                />
+              />
             </InputForm>
             <InputForm image={lock} text="Password">
-                <Input
+              <Input
                 type="password"
                 width={{ base: "100%" }}
                 variant="flushed"
@@ -125,31 +108,21 @@ export function Login() {
                 focusBorderColor="blue.300"
                 {...register("password", { required: true, maxLength: 20 })}
                 isInvalid={errors.password ? true : false}
-                />
+              />
             </InputForm>
             <InfoForgetPassword />
-            {
-              isPending ? <Loader /> : <SubmitButton image={login} text="Login" />
-            }
+            {isPending ? (
+              <Loader />
+            ) : (
+              <SubmitButton image={login} text="Login" />
+            )}
             <InfoAccountLogin
               info="Don't have an account?"
               authStatus="Sign up"
             />
           </Flex>
         </form>
-        {isLogin && <Navigate to='/homepage' />}
-=======
-        <Flex flexDirection={"column"} p={5}>
-          <InputForm image={user} text="Username or Email" />
-          <InputForm image={lock} text="Password" />
-          <InfoForgetPassword />
-          <SubmitButton image={login} text="Login" />
-          <InfoAccountLogin
-            info="Don't have an account?"
-            authStatus="Sign up"
-          />
-        </Flex>
->>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
+        {isLogin && <Navigate to="/homepage" />}
       </Flex>
     </Flex>
   );

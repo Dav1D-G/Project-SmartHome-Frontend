@@ -1,21 +1,17 @@
-<<<<<<< HEAD
-import { Flex,Text ,Input } from "@chakra-ui/react";
+import { Flex, Text, Input } from "@chakra-ui/react";
 import { ID, login } from "../../../assets/Images/index.js";
 import { SubmitButton, InputForm } from "./../../molecule/Auth/index.js";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
-import { useState , useEffect } from "react";
-import {Loader , InfoAlert} from './../../molecule/Auth/index.js'
+import { useState, useEffect } from "react";
+import { Loader, InfoAlert } from "./../../molecule/Auth/index.js";
 import { useCookies } from "react-cookie";
-import { registerPanel }from './../../../api/index.js'
+import { registerPanel } from "./../../../api/index.js";
 import { Navigate } from "react-router-dom";
 
-
 export function RegisterDevice() {
-
-
   // Method for performing a request to api
-  const { isPending , mutate } = useMutation({
+  const { isPending, mutate } = useMutation({
     mutationFn: registerPanel,
     onSuccess: () => {
       setIsRegister(true);
@@ -28,43 +24,33 @@ export function RegisterDevice() {
   });
 
   // States
-  const [isRegister , setIsRegister] = useState(false);
+  const [isRegister, setIsRegister] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["access-token"]);
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
-  const [errorMessage , setErrorMessage ] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [isError, setIsError] = useState(false);
 
   // Method for submiting form
   const onSubmit = (data) => {
-    const {panelID} = data;
-    const access_token = cookies['access-token'];
-    mutate({panelID , access_token});
+    const { panelID } = data;
+    const access_token = cookies["access-token"];
+    mutate({ panelID, access_token });
   };
 
-  // Effect for clearing error message 
+  // Effect for clearing error message
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsError(false);
       setErrorMessage("");
     }, 3000);
     return () => clearTimeout(timeoutId);
-  }, [isError , errorMessage]);
+  }, [isError, errorMessage]);
 
   return (
     <Flex flex={1} justifyContent="space-around" marginTop={10}>
       {/* START OF FORMULA */}
-      {isError && <InfoAlert message={errorMessage} status="error"/>}
-=======
-import { Flex, Box, Text } from "@chakra-ui/react";
-import { ID, login } from "../../../assets/Images/index.js";
-import { SubmitButton, InputForm } from "./../../molecule/Auth/index.js";
-
-export function RegisterDevice() {
-  return (
-    <Flex flex={1} justifyContent="space-around" marginTop={10}>
-      {/* START OF FORMULA */}
->>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
+      {isError && <InfoAlert message={errorMessage} status="error" />}
       <Flex
         width={{ base: "90%", sm: "80%", md: "60%", lg: "50%", xl: "40%" }}
         borderRadius={"xl"}
@@ -93,28 +79,25 @@ export function RegisterDevice() {
           </Text>
         </Flex>
         <Flex flexDirection={"column"} mt={8} alignItems="center">
-<<<<<<< HEAD
-          <form style={{width : '100%'}} onSubmit={handleSubmit(onSubmit)}>
+          <form style={{ width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
             <InputForm image={ID} text="Device ID">
-                  <Input
-                    type="text"
-                    width={{ base: "100%" }}
-                    variant="flushed"
-                    borderColor={"gray.500"}
-                    focusBorderColor="blue.300"
-                    {...register("panelID", { required: true, maxLength: 30 })}
-                    isInvalid={errors.panelID ? true : false}
-                  />
+              <Input
+                type="text"
+                width={{ base: "100%" }}
+                variant="flushed"
+                borderColor={"gray.500"}
+                focusBorderColor="blue.300"
+                {...register("panelID", { required: true, maxLength: 30 })}
+                isInvalid={errors.panelID ? true : false}
+              />
             </InputForm>
-            {
-              isPending ? <Loader /> : <SubmitButton image={login} text="Confirm" />
-            }
+            {isPending ? (
+              <Loader />
+            ) : (
+              <SubmitButton image={login} text="Confirm" />
+            )}
           </form>
-          {isRegister && <Navigate to='/homepage/info-register-device'/>}
-=======
-          <InputForm image={ID} text="Device ID" />
-          <SubmitButton image={login} text="Confirm" />
->>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
+          {isRegister && <Navigate to="/homepage/info-register-device" />}
         </Flex>
       </Flex>
     </Flex>

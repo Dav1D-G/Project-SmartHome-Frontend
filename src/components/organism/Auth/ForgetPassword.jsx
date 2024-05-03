@@ -1,15 +1,18 @@
-<<<<<<< HEAD
-import { Flex, Box, Text , Input} from "@chakra-ui/react";
+import { Flex, Box, Text, Input } from "@chakra-ui/react";
 import { mail, login } from "../../../assets/Images/index.js";
-import { SubmitButton, InputForm , Loader , InfoAlert } from "./../../molecule/Auth/index.js";
+import {
+  SubmitButton,
+  InputForm,
+  Loader,
+  InfoAlert,
+} from "./../../molecule/Auth/index.js";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import {forgetPassword} from './../../../api/index.js'
+import { forgetPassword } from "./../../../api/index.js";
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 
 export function ForgetPassword() {
-
   // Method for performing a request to api
   const { isPending, mutate } = useMutation({
     mutationFn: forgetPassword,
@@ -24,43 +27,33 @@ export function ForgetPassword() {
     },
   });
 
-  const [email , setEmail] = useState('');
-  const [errorMessage , setErrorMessage ] = useState("");
-  const [isSendEmail , setIsSendEmail] = useState(false);
+  const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSendEmail, setIsSendEmail] = useState(false);
   const [isError, setIsError] = useState(false);
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
 
   // Method for submiting form
   const onSubmit = (data) => {
-    const {email} = data;
+    const { email } = data;
     setEmail(email);
     mutate(data);
   };
 
-  // Effect for clearing error message 
+  // Effect for clearing error message
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsError(false);
       setErrorMessage("");
     }, 3000);
     return () => clearTimeout(timeoutId);
-  }, [isError , errorMessage]);
+  }, [isError, errorMessage]);
 
   return (
     <Flex flex={1} justifyContent="space-around" marginTop={10}>
       {/* START OF FORMULA */}
-      {isError && <InfoAlert message={errorMessage} status="error"/>}
-=======
-import { Flex, Box, Text, Center } from "@chakra-ui/react";
-import { mail, login } from "../../../assets/Images/index.js";
-import { SubmitButton, InputForm } from "./../../molecule/Auth/index.js";
-
-export function ForgetPassword() {
-  return (
-    <Flex flex={1} justifyContent="space-around" marginTop={10}>
-      {/* START OF FORMULA */}
->>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
+      {isError && <InfoAlert message={errorMessage} status="error" />}
       <Flex
         width={{ base: "95%", sm: "80%", md: "50%", lg: "50%", xl: "40%" }}
         p={6}
@@ -92,28 +85,27 @@ export function ForgetPassword() {
           </Box>
         </Flex>
         <Flex flexDirection={"column"}>
-<<<<<<< HEAD
           <form onSubmit={handleSubmit(onSubmit)}>
             <InputForm image={mail} text="Email">
-                <Input
-                  type="email"
-                  width={{ base: "100%" }}
-                  variant="flushed"
-                  borderColor={"gray.500"}
-                  focusBorderColor="blue.300"
-                  {...register("email", { required: true, maxLength: 30 })}
-                  isInvalid={errors.email ? true : false}
-                  />
+              <Input
+                type="email"
+                width={{ base: "100%" }}
+                variant="flushed"
+                borderColor={"gray.500"}
+                focusBorderColor="blue.300"
+                {...register("email", { required: true, maxLength: 30 })}
+                isInvalid={errors.email ? true : false}
+              />
             </InputForm>
-            {
-              isPending ? <Loader /> : <SubmitButton image={login} text="Submit" />
-            }
+            {isPending ? (
+              <Loader />
+            ) : (
+              <SubmitButton image={login} text="Submit" />
+            )}
           </form>
-          {isSendEmail && <Navigate to={`/info-forget-password?email=${email}`}/>}
-=======
-          <InputForm image={mail} text="Email" />
-          <SubmitButton image={login} text="Submit" />
->>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
+          {isSendEmail && (
+            <Navigate to={`/info-forget-password?email=${email}`} />
+          )}
         </Flex>
       </Flex>
     </Flex>

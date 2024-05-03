@@ -14,15 +14,10 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-<<<<<<< HEAD
     "@tanstack/react-query": "^5.32.0",
     "framer-motion": "^11.0.28",
     "react": "^18.2.0",
     "react-cookie": "^7.1.4",
-=======
-    "framer-motion": "^11.0.28",
-    "react": "^18.2.0",
->>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.3",
     "react-router-dom": "^6.22.3"

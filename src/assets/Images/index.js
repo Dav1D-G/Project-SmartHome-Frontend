@@ -15,7 +15,11 @@ import Lock from './dashboard/Lock.svg'
 import Light from './dashboard/Light.svg'
 import plus from './dashboard/plus.svg'
 import control_panel from './dashboard/control_panel.svg'
+<<<<<<< HEAD
 import success from './login/success.svg'
 import arrow_right from './login/arrow-right.svg'
 import code from './login/code.svg'
 export {user , lock , login, mail, ID , burger_menu , log_out , dashboard, settings, Temperature, Humidity, Camera, Gate, Light, Lock, plus, control_panel ,success , arrow_right , code};
+=======
+export {user , lock , login, mail, ID , burger_menu , log_out , dashboard, settings, Temperature, Humidity, Camera, Gate, Light, Lock, plus, control_panel};
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3

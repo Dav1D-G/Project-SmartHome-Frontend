@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Flex, Box, Text , Input} from "@chakra-ui/react";
 import { mail, login } from "../../../assets/Images/index.js";
 import { SubmitButton, InputForm , Loader , InfoAlert } from "./../../molecule/Auth/index.js";
@@ -50,6 +51,16 @@ export function ForgetPassword() {
     <Flex flex={1} justifyContent="space-around" marginTop={10}>
       {/* START OF FORMULA */}
       {isError && <InfoAlert message={errorMessage} status="error"/>}
+=======
+import { Flex, Box, Text, Center } from "@chakra-ui/react";
+import { mail, login } from "../../../assets/Images/index.js";
+import { SubmitButton, InputForm } from "./../../molecule/Auth/index.js";
+
+export function ForgetPassword() {
+  return (
+    <Flex flex={1} justifyContent="space-around" marginTop={10}>
+      {/* START OF FORMULA */}
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
       <Flex
         width={{ base: "95%", sm: "80%", md: "50%", lg: "50%", xl: "40%" }}
         p={6}
@@ -81,6 +92,7 @@ export function ForgetPassword() {
           </Box>
         </Flex>
         <Flex flexDirection={"column"}>
+<<<<<<< HEAD
           <form onSubmit={handleSubmit(onSubmit)}>
             <InputForm image={mail} text="Email">
                 <Input
@@ -98,6 +110,10 @@ export function ForgetPassword() {
             }
           </form>
           {isSendEmail && <Navigate to={`/info-forget-password?email=${email}`}/>}
+=======
+          <InputForm image={mail} text="Email" />
+          <SubmitButton image={login} text="Submit" />
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
         </Flex>
       </Flex>
     </Flex>

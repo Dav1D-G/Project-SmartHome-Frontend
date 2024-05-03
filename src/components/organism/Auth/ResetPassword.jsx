@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Flex, Box, Text , Input } from "@chakra-ui/react";
 import { lock, login } from "../../../assets/Images";
 import { SubmitButton, InputForm  , Loader , InfoAlert} from "./../../molecule/Auth/index.js";
@@ -60,6 +61,16 @@ export function ResetPassword() {
     <Flex flex={1} justifyContent="space-around" marginTop={10}>
       {/* START OF FORMULA */}
       {isInvalidToken && <InfoAlert message={errorMessage} status="error"/>}
+=======
+import { Flex, Box, Text } from "@chakra-ui/react";
+import { lock, login } from "../../../assets/Images";
+import { SubmitButton, InputForm } from "./../../molecule/Auth/index.js";
+
+export function ResetPassword() {
+  return (
+    <Flex flex={1} justifyContent="space-around" marginTop={10}>
+      {/* START OF FORMULA */}
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
       <Flex
         width={{ base: "95%", sm: "80%", md: "50%", lg: "50%", xl: "40%" }}
         p={6}
@@ -91,6 +102,7 @@ export function ResetPassword() {
           </Box>
         </Flex>
         <Flex flexDirection={"column"}>
+<<<<<<< HEAD
           <form onSubmit={handleSubmit(onSubmit)}>
             <InputForm image={lock} text="Password" isError={isError} errorMessage={errorMessage}>
               <Input
@@ -119,6 +131,11 @@ export function ResetPassword() {
             }
           </form>
           {isRedirect && <Navigate to='/info-reset-password'/>}
+=======
+          <InputForm image={lock} text="Password" />
+          <InputForm image={lock} text="Confirm Password" />
+          <SubmitButton image={login} text="Submit" />
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
         </Flex>
       </Flex>
     </Flex>

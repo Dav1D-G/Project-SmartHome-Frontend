@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Flex, Box, Text , Input } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { user, lock, login } from "../../../assets/Images/index.js";
@@ -6,11 +7,16 @@ import { useMutation } from "@tanstack/react-query";
 import { useCookies } from "react-cookie";
 import { loginUser } from './../../../api/index.js'
 import { Navigate } from "react-router-dom";
+=======
+import { Flex, Box, Text } from "@chakra-ui/react";
+import { user, lock, login } from "../../../assets/Images/index.js";
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
 import {
   InfoAccountLogin,
   SubmitButton,
   InfoForgetPassword,
   InputForm,
+<<<<<<< HEAD
   Loader,
   InfoAlert
 } from "./../../molecule/Auth/index.js";
@@ -59,6 +65,14 @@ export function Login() {
     <Flex flex={1} justifyContent="space-around" marginTop={10}>
       {/* START OF FORM */}
       {isError && <InfoAlert message={errorMessage} status="error"/>}
+=======
+} from "./../../molecule/Auth/index.js";
+
+export function Login() {
+  return (
+    <Flex flex={1} justifyContent="space-around" marginTop={10}>
+      {/* START OF FORM */}
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
       <Flex
         width={{ base: "90%", sm: "80%", md: "60%", lg: "50%", xl: "40%" }}
         borderRadius={"xl"}
@@ -88,6 +102,7 @@ export function Login() {
             </Text>
           </Box>
         </Flex>
+<<<<<<< HEAD
         <form onSubmit={handleSubmit(onSubmit)}>
           <Flex flexDirection={"column"} p={5}>
             <InputForm image={user} text="Username or Email">
@@ -123,6 +138,18 @@ export function Login() {
           </Flex>
         </form>
         {isLogin && <Navigate to='/homepage' />}
+=======
+        <Flex flexDirection={"column"} p={5}>
+          <InputForm image={user} text="Username or Email" />
+          <InputForm image={lock} text="Password" />
+          <InfoForgetPassword />
+          <SubmitButton image={login} text="Login" />
+          <InfoAccountLogin
+            info="Don't have an account?"
+            authStatus="Sign up"
+          />
+        </Flex>
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
       </Flex>
     </Flex>
   );

@@ -9,12 +9,18 @@ import { Register } from "./components/organism/Auth/Register.jsx";
 import { ForgetPassword } from "./components/organism/Auth/ForgetPassword.jsx";
 import { ResetPassword } from "./components/organism/Auth/ResetPassword.jsx";
 import { Homepage } from "./pages/Homepage.jsx";
+<<<<<<< HEAD
 import { MenuDevice } from "./components/organism/Home/MenuDevice.jsx";
 import { RegisterDevice } from "./components/organism/Home/RegisterDevice.jsx";
 import { MainPage } from "./components/organism/Home/MainPage.jsx";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Info } from "./components/organism/Auth/Info.jsx";
 import { VerifyUser } from "./components/organism/Auth/VerifyUser.jsx";
+=======
+import { Main } from "./components/organism/Home/Main.jsx";
+import { RegisterDevice } from "./components/organism/Home/RegisterDevice.jsx";
+import { SelectDevice } from "./components/organism/Home/SelectDevice.jsx";
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
 
 const router = createBrowserRouter([
   {
@@ -37,6 +43,7 @@ const router = createBrowserRouter([
         path: "/reset-password",
         element: <ResetPassword />,
       },
+<<<<<<< HEAD
       {
         path :'/info-register',
         element : <Info page="registerUser" url="/"/>
@@ -57,6 +64,8 @@ const router = createBrowserRouter([
         path : '/verify-user',
         element : <VerifyUser />
       }
+=======
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
     ],
   },
   {
@@ -65,6 +74,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
+<<<<<<< HEAD
         element: <MainPage />,
       },
       {
@@ -80,6 +90,18 @@ const router = createBrowserRouter([
         element: <MenuDevice />,
       },
       
+=======
+        element: <SelectDevice />,
+      },
+      {
+        path: "/homepage/RegisterDevice",
+        element: <RegisterDevice />,
+      },
+      {
+        path: "/homepage/Main",
+        element: <Main />,
+      },
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
       // {
       //   path : '',
       //   element : <Sensor/>
@@ -103,6 +125,7 @@ const router = createBrowserRouter([
   //   element : <NotFound /> TO DO!!!
   // }
 ]);
+<<<<<<< HEAD
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -112,5 +135,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <RouterProvider router={router} />
       </ChakraProvider>
     </QueryClientProvider>
+=======
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
   </React.StrictMode>
 );

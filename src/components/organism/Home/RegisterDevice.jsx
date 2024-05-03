@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Flex,Text ,Input } from "@chakra-ui/react";
 import { ID, login } from "../../../assets/Images/index.js";
 import { SubmitButton, InputForm } from "./../../molecule/Auth/index.js";
@@ -54,6 +55,16 @@ export function RegisterDevice() {
     <Flex flex={1} justifyContent="space-around" marginTop={10}>
       {/* START OF FORMULA */}
       {isError && <InfoAlert message={errorMessage} status="error"/>}
+=======
+import { Flex, Box, Text } from "@chakra-ui/react";
+import { ID, login } from "../../../assets/Images/index.js";
+import { SubmitButton, InputForm } from "./../../molecule/Auth/index.js";
+
+export function RegisterDevice() {
+  return (
+    <Flex flex={1} justifyContent="space-around" marginTop={10}>
+      {/* START OF FORMULA */}
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
       <Flex
         width={{ base: "90%", sm: "80%", md: "60%", lg: "50%", xl: "40%" }}
         borderRadius={"xl"}
@@ -82,6 +93,7 @@ export function RegisterDevice() {
           </Text>
         </Flex>
         <Flex flexDirection={"column"} mt={8} alignItems="center">
+<<<<<<< HEAD
           <form style={{width : '100%'}} onSubmit={handleSubmit(onSubmit)}>
             <InputForm image={ID} text="Device ID">
                   <Input
@@ -99,6 +111,10 @@ export function RegisterDevice() {
             }
           </form>
           {isRegister && <Navigate to='/homepage/info-register-device'/>}
+=======
+          <InputForm image={ID} text="Device ID" />
+          <SubmitButton image={login} text="Confirm" />
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
         </Flex>
       </Flex>
     </Flex>

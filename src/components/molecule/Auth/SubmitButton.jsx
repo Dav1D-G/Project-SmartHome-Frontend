@@ -32,7 +32,10 @@ export function SubmitButton({ image, text }) {
         _hover={{
           bgGradient: "linear(to-r, rgba(138,73,247,1), rgba(94,175,250,1))",
         }}
+<<<<<<< HEAD
         type={'submit'}
+=======
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
       >
         <Flex w={"100%"}>
           <Box

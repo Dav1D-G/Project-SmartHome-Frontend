@@ -1,13 +1,19 @@
+<<<<<<< HEAD
 import { Flex, Text , Input }  from "@chakra-ui/react";
 import { mail, user, lock, login } from "../../../assets/Images/index.js";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
+=======
+import { Flex, Box, Text } from "@chakra-ui/react";
+import { mail, user, lock, login } from "../../../assets/Images/index.js";
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
 import {
   InfoAccountRegister,
   SubmitButton,
   InputForm,
+<<<<<<< HEAD
   Loader,
   InfoAlert
 } from "./../../molecule/Auth/index.js";
@@ -63,6 +69,14 @@ export function Register() {
     <Flex flex={1} justifyContent="space-around" marginTop={10}>
       {/* START OF FORMULA */}
       {isRegister && <InfoAlert message={successMessage} status="success"/>}
+=======
+} from "./../../molecule/Auth/index.js";
+
+export function Register() {
+  return (
+    <Flex flex={1} justifyContent="space-around" marginTop={10}>
+      {/* START OF FORMULA */}
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
       <Flex
         width={{ base: "95%", sm: "80%", md: "50%", lg: "50%", xl: "40%" }}
         borderRadius={"xl"}
@@ -87,6 +101,7 @@ export function Register() {
             {"Create an account to continue!"}
           </Text>
         </Flex>
+<<<<<<< HEAD
         <form onSubmit={handleSubmit(onSubmit)}>
           <Flex flexDirection={"column"} alignItems="center" p={5}>
             <InputForm image={mail} text="Email">
@@ -143,6 +158,19 @@ export function Register() {
           </Flex>
         </form>
         {isRedirect && <Navigate to={`/info-register?email=${email}`} />}
+=======
+        <Flex flexDirection={"column"} alignItems="center" p={5}>
+          <InputForm image={mail} text="Email" />
+          <InputForm image={user} text="Username" />
+          <InputForm image={lock} text="Password" />
+          <InputForm image={lock} text="Confirm Password" />
+          <SubmitButton image={login} text="Sign Up" />
+          <InfoAccountRegister
+            info="Already have an account?"
+            authStatus="Sign In"
+          />
+        </Flex>
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
       </Flex>
       {/* END OF FORMULA */}
     </Flex>

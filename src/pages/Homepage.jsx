@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Container, Spinner , Text } from "@chakra-ui/react";
+=======
+import { Container } from "@chakra-ui/react";
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
 import { Flex, Box } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import {
@@ -7,6 +11,7 @@ import {
   NavBar,
 } from "./../components/molecule/Home/index";
 import { useState } from "react";
+<<<<<<< HEAD
 import {isUser} from './../api/index'
 import { useCookies } from "react-cookie";
 import { useQuery } from "@tanstack/react-query";
@@ -20,22 +25,38 @@ export function Homepage() {
 
   return (
     <>
+=======
+
+export function Homepage() {
+  const [isClickedBurger, setIsClickedBurger] = useState(false);
+  return (
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
     <Container
       minW={"358px"}
       maxW={"none"}
       m={"unset"}
       p={"unset"}
       height={"100vh"}
+<<<<<<< HEAD
       bgGradient="linear(to-r, rgba(94,175,250,1), rgba(138,73,247,1))"
     >
       <Flex height={"100%"} justifyContent={"center"}>
         {isSuccess && <Box
+=======
+    >
+      <Flex height={"100%"} justifyContent={"center"}>
+        <Box
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
           flex={1}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"start"}
           height={"100%"}
+<<<<<<< HEAD
           
+=======
+          bgGradient="linear(to-r, rgba(94,175,250,1), rgba(138,73,247,1))"
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
         >
           <Flex width={"100%"} flexDirection={"column"}>
             <AsideMenu isClickedBurger={isClickedBurger} />{" "}
@@ -48,6 +69,7 @@ export function Homepage() {
             <NavBar /> {/* min-width:994px  max-width:unlimited*/}
             <Outlet />
           </Flex>
+<<<<<<< HEAD
         </Box>}
         {isError && 
         <Flex width={'100%'} justifyContent={'start'} alignItems={'center'} marginTop={30} flexDirection={'column'}>
@@ -68,5 +90,10 @@ export function Homepage() {
       </Flex>
     </Container>
     </>
+=======
+        </Box>
+      </Flex>
+    </Container>
+>>>>>>> 8e5c1af935bd2cef93e5ebe70d8db49361ad35d3
   );
 }

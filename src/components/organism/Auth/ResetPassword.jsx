@@ -1,6 +1,7 @@
 import { Flex, Box, Text, Input } from "@chakra-ui/react";
 import { lock, login } from "../../../assets/Images";
 import {
+  InfoAccountRegister,
   SubmitButton,
   InputForm,
   Loader,
@@ -136,6 +137,10 @@ export function ResetPassword() {
             )}
           </form>
           {isRedirect && <Navigate to="/info-reset-password" />}
+          <InfoAccountRegister
+            info="Do you want to login?"
+            authStatus="Sign In"
+          />
         </Flex>
       </Flex>
     </Flex>

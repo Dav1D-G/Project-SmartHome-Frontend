@@ -1,6 +1,7 @@
 import { Flex, Box, Text, Input } from "@chakra-ui/react";
 import { mail, login } from "../../../assets/Images/index.js";
 import {
+  InfoAccountRegister,
   SubmitButton,
   InputForm,
   Loader,
@@ -106,6 +107,10 @@ export function ForgetPassword() {
           {isSendEmail && (
             <Navigate to={`/info-forget-password?email=${email}`} />
           )}
+          <InfoAccountRegister
+            info="Do you want to login?"
+            authStatus="Sign In"
+          />
         </Flex>
       </Flex>
     </Flex>

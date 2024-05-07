@@ -11,7 +11,13 @@ export function AsideMenuOption({ image, text, nav }) {
             <Image src={image} width="30px" height="30px" />
           </Box>
           <Center ml={"30vw"}>
-            <Text>{text}</Text>
+            <Text
+              fontSize={{ base: "16px", md: "18px", lg: "22px" }}
+              className="dm-sans"
+              fontWeight={700}
+            >
+              {text}
+            </Text>
           </Center>
         </Flex>
       </Link>

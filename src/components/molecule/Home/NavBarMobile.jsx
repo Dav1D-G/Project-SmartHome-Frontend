@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export function NavBarMobile({ isClickedBurger, setIsClickedBurger }) {
   return (
     <Flex
-      backgroundColor={`#B0AFE5`}
+      bgGradient="linear-gradient(90deg, rgba(108,187,231,1) 41%, rgba(2,78,181,1) 100%)"
       height={"80px"}
       display={{ base: "flex", lg: "none" }}
     >

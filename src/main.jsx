@@ -15,6 +15,12 @@ import { MainPage } from "./components/organism/Home/MainPage.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Info } from "./components/organism/Auth/Info.jsx";
 import { VerifyUser } from "./components/organism/Auth/VerifyUser.jsx";
+import { Sensor } from "./components/organism/Home/Sensor.jsx";
+import { Gate } from "./components/organism/Home/Gate.jsx";
+import { Lock } from "./components/organism/Home/Lock.jsx";
+import { Light } from "./components/organism/Home/Light.jsx";
+import { NotFound } from "./pages/NotFound.jsx";
+import { Logout } from "./pages/Logout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -79,29 +85,40 @@ const router = createBrowserRouter([
         path: "menu-devices",
         element: <MenuDevice />,
       },
-
-      // {
-      //   path : '',
-      //   element : <Sensor/>
-      // },
-      // {
-      //   path : '',
-      //   element : <Gate/>
-      // },
-      // {
-      //   path : '',
-      //   element : <Lock/>
-      // },
-      // {
-      //   path : '',
-      //   element : <Light/>
-      // },
+      {
+        path : 'sensor',
+        element : <Sensor/>
+      },
+      {
+        path : 'gate',
+        element : <Gate/>
+      },
+      {
+        path : 'lock',
+        element : <Lock/>
+      },
+      {
+        path : 'light',
+        element : <Light/>
+      },
     ],
   },
+  {
+    path : '*',
+    element : <NotFound />
+  },
   // {
-  //   path : '*',
-  //   element : <NotFound /> TO DO!!!
+  //   path : 'profile',
+  //   element : <Profile/>
   // }
+  // {
+  //   path : 'settings',
+  //   element : <Profile/>
+  // }
+  {
+    path : 'logout',
+    element : <Logout/>
+  }
 ]);
 const queryClient = new QueryClient();
 

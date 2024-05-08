@@ -1,6 +1,5 @@
 import { Flex, Box, Text, Center} from "@chakra-ui/react";
 import {
-  control_panel,
   plus,
 } from "../../../assets/Images/index.js";
 
@@ -9,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { isVerifyPanel } from "../../../api/is-verify-panel.js";
 import {useCookies} from 'react-cookie'
 import { useState , useEffect } from "react";
+import { MenuDevice } from "./MenuDevice.jsx";
 
 
 export function MainPage() {
@@ -21,7 +21,7 @@ export function MainPage() {
    useEffect(() => {
     if(isSuccess)
       setIsRegister(()=>data.status);
-  }, [isError,isSuccess,error,data]);
+  }, [isSuccess,data]);
 
 
   return (
@@ -54,11 +54,11 @@ export function MainPage() {
           </Text>
           <Flex flexDirection={"row"} justifyContent={"space-around"} mt={4}>
             {
-              isRegister ? <div>TUTAJ MA BYC MENU DEVICE POFORMATOWANE</div> : <Box mr={{ base: 2, lg: 10 }}>
+              isRegister ? <MenuDevice /> : <Box mr={{ base: 2, lg: 10 }}>
               <Center>
                 <ClickableSVGBox
-                  svgUrl={plus}
-                  linkTo={"register-device"}
+                  image={plus}
+                  link={"register-device"}
                 />
               </Center>
               <Text

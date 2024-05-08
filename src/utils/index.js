@@ -1,2 +1,3 @@
 import { isPasswordSame } from "./is-password-same";
-export {isPasswordSame}
+import { SmartHomeElements } from "./smart-home-elements";
+export {isPasswordSame , SmartHomeElements}

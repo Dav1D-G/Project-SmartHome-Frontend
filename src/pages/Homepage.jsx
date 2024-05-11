@@ -32,25 +32,64 @@ export function Homepage() {
         bgGradient="linear(to-r, rgba(94,175,250,1), rgba(138,73,247,1))"
       >
         <Flex height={"100%"} justifyContent={"center"}>
-          <Box
-            flex={1}
-            display={"flex"}
-            justifyContent={"center"}
-            alignItems={"start"}
-            height={"100%"}
-          >
-            <Flex width={"100%"} flexDirection={"column"}>
-              <AsideMenu isClickedBurger={isClickedBurger} />{" "}
-              {/* min-width:0px  max-width:993px*/}
-              <NavBarMobile
-                isClickedBurger={isClickedBurger}
-                setIsClickedBurger={setIsClickedBurger}
-              />{" "}
-              {/* min-width:0px  max-width:993px*/}
-              <NavBar /> {/* min-width:994px  max-width:unlimited*/}
-              <Outlet />
+          {isSuccess && (
+            <Box
+              flex={1}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"start"}
+              height={"100%"}
+            >
+              <Flex width={"100%"} flexDirection={"column"}>
+                <AsideMenu isClickedBurger={isClickedBurger} />{" "}
+                {/* min-width:0px  max-width:993px*/}
+                <NavBarMobile
+                  isClickedBurger={isClickedBurger}
+                  setIsClickedBurger={setIsClickedBurger}
+                />{" "}
+                {/* min-width:0px  max-width:993px*/}
+                <NavBar /> {/* min-width:994px  max-width:unlimited*/}
+                <Outlet />
+              </Flex>
+            </Box>
+          )}
+          {isError && (
+            <Flex
+              width={"100%"}
+              justifyContent={"start"}
+              alignItems={"center"}
+              marginTop={30}
+              flexDirection={"column"}
+            >
+              <Flex
+                justifyContent={"space-around"}
+                alignItems={"center"}
+                flexDirection={"column"}
+                width={{ base: "80%", md: "60%", lg: "50%" }}
+                height={"400px"}
+                bg={"white"}
+                borderRadius={50}
+              >
+                <Text marginBottom={15}>Coś poszło nie tak ....</Text>
+                <Text marginBottom={15}>😕</Text>
+                <Text marginBottom={15}>Może zostałeś wylogowany ?</Text>
+                <Text marginBottom={15}>
+                  Może wciąż się nie zweryfikowałeś ?
+                </Text>
+                <ForwardPageButton url="/" />
+              </Flex>
             </Flex>
-          </Box>
+          )}
+          {isPending && (
+            <Flex
+              width={"100%"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              bgGradient="linear(to-r, rgba(94,175,250,1), rgba(138,73,247,1))"
+            >
+              <Spinner size={"xl"} color="white" />
+            </Flex>
+          )}
         </Flex>
       </Container>
     </>

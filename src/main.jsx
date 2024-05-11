@@ -21,7 +21,6 @@ import { Lock } from "./components/organism/Home/Lock.jsx";
 import { Light } from "./components/organism/Home/Light.jsx";
 import { NotFound } from "./pages/NotFound.jsx";
 import { Logout } from "./pages/Logout.jsx";
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/info-register",
         element: <Info page="registerUser" url="/" />,
+      },
+      {
+        path: "/info-logout",
+        element: <Info page="Logout" url="/" />,
       },
       {
         path: "/info-forget-password",
@@ -86,26 +89,26 @@ const router = createBrowserRouter([
         element: <MenuDevice />,
       },
       {
-        path : 'sensor',
-        element : <Sensor/>
+        path: "sensor",
+        element: <Sensor />,
       },
       {
-        path : 'gate',
-        element : <Gate/>
+        path: "gate",
+        element: <Gate />,
       },
       {
-        path : 'lock',
-        element : <Lock/>
+        path: "lock",
+        element: <Lock />,
       },
       {
-        path : 'light',
-        element : <Light/>
+        path: "light",
+        element: <Light />,
       },
     ],
   },
   {
-    path : '*',
-    element : <NotFound />
+    path: "*",
+    element: <NotFound />,
   },
   // {
   //   path : 'profile',
@@ -116,9 +119,9 @@ const router = createBrowserRouter([
   //   element : <Profile/>
   // }
   {
-    path : 'logout',
-    element : <Logout/>
-  }
+    path: "logout",
+    element: <Logout />,
+  },
 ]);
 const queryClient = new QueryClient();
 

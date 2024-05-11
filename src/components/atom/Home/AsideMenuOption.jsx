@@ -1,24 +1,26 @@
-import { Flex, Box, Image, Text, Center } from "@chakra-ui/react";
+import { Flex, Box, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export function AsideMenuOption({ image, text, nav }) {
   return (
-    <Flex alignItems="center" my={3}>
+    <Flex marginLeft="37%" my={3}>
       <Link to={`/${nav}`} style={{ textDecoration: "none" }}>
-        <Flex alignItems="center">
+        <Flex>
           <Box mr={5}>
-            <Image src={image} width="30px" height="30px" />
+            <Image
+              src={image}
+              width={{ base: "25px", sm: "30px", md: "35px" }}
+              height={{ base: "25px", sm: "30px", md: "35px" }}
+            />
           </Box>
-          <Center ml={"30vw"}>
-            <Text
-              fontSize={{ base: "16px", md: "18px", lg: "22px" }}
-              className="dm-sans"
-              fontWeight={700}
-            >
-              {text}
-            </Text>
-          </Center>
+          <Text
+            fontSize={{ base: "16px", sm: "18px", md: "22px" }}
+            className="dm-sans"
+            fontWeight={700}
+          >
+            {text}
+          </Text>
         </Flex>
       </Link>
     </Flex>

@@ -4,11 +4,7 @@ import PropTypes from "prop-types";
 
 export function NavBarMobile({ isClickedBurger, setIsClickedBurger }) {
   return (
-    <Flex
-      bgGradient="linear-gradient(90deg, rgba(108,187,231,1) 41%, rgba(2,78,181,1) 100%)"
-      height={"80px"}
-      display={{ base: "flex", lg: "none" }}
-    >
+    <Flex bg={"white"} height={"80px"} display={{ base: "flex", lg: "none" }}>
       <Flex flex={1} alignItems={"center"}>
         <Box
           ms={"2"}

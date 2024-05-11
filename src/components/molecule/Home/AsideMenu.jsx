@@ -16,7 +16,7 @@ export function AsideMenu({ isClickedBurger }) {
       height={"100%"}
       top={"80px"}
       width={"100%"}
-      bgGradient="linear-gradient(0deg, rgba(4,230,233,1) 0%, rgba(189,194,255,1) 100%)"
+      bg={"white"}
       transform={`${isClickedBurger ? "translateX(0%)" : "translateX(-100%)"}`}
       transition="transform 1s ease-in-out"
     >

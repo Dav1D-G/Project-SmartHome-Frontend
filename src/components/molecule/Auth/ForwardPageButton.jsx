@@ -16,14 +16,17 @@ export function ForwardPageButton({ url }) {
     >
       <Button
         colorScheme="whatsapp"
-        width={{ base: "80%", md: "60%", lg: "50%" }}
+        width={{ base: "70%", md: "40%", lg: "50%" }}
         height={{ base: "60px", md: "50px", lg: "50px" }}
-        fontSize={{ base: "xl" }}
-        borderRadius="10px"
         boxShadow="lg"
       >
-        <Flex justifyContent="space-between" alignItems="center" width="100%">
-          <Text flexGrow="1">Go to home page</Text>
+        <Flex m={4} justifyContent="center" alignItems="center" width="100%">
+          <Text
+            fontSize={{ base: "16px", md: "18px", lg: "20px" }}
+            color={"white"}
+          >
+            Go to home page
+          </Text>
           <Image src={arrow_right} boxSize={{ base: "28px", lg: "32px" }} />
         </Flex>
       </Button>

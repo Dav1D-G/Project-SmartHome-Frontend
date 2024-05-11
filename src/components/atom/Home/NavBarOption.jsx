@@ -13,13 +13,17 @@ export function NavBarOption({ image, text, nav }) {
         }}
         to={`/${nav}`}
       >
-        <Box me={"5"}>
-          <Image src={`${image}`} width={"30px"} height={"30px"} />
+        <Box me={{ base: "3", md: "5" }}>
+          <Image
+            src={`${image}`}
+            width={{ lg: "30px", xl: "40px" }}
+            height={{ lg: "30px", xl: "40px" }}
+          />
         </Box>
         <Box>
           <Center>
             <Text
-              fontSize={{ base: "16px", md: "18px", lg: "22px" }}
+              fontSize={{ lg: "16px", xl: "20px" }}
               className="dm-sans"
               fontWeight={700}
             >

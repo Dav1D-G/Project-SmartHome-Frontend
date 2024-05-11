@@ -13,6 +13,7 @@ export function Info({ page, url }) {
     "Successfully has been send activation link in order to reset password to given email"
   );
   const resetPassword = useRef("Successfully has been changed a password");
+  const Logout = useRef("You've been successfuly logged out");
   const verifiedUser = useRef("Successfully has been verified a user");
   const registerDevice = useRef(
     "Successfully has been registered a control panel"
@@ -36,6 +37,7 @@ export function Info({ page, url }) {
             className="nunito-sans"
           >
             {page == "resetPassword" && resetPassword.current}
+            {page == "Logout" && Logout.current}
             {page == "registerUser" && verificationCode.current}
             {page == "forgetPassword" && activationLink.current}
             {page == "verifiedUser" && verifiedUser.current}

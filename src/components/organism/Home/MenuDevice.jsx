@@ -1,5 +1,5 @@
 import { Flex, Text, SimpleGrid, Center } from "@chakra-ui/react";
-import {SmartHomeElements} from './../../../utils/index.js'
+import { SmartHomeElements } from "./../../../utils/index.js";
 
 const elements = SmartHomeElements();
 
@@ -35,15 +35,17 @@ export function MenuDevice() {
           </Center>
         </Flex>
         <SimpleGrid columns={[2, 3]} spacing={4} p={4}>
-          {
-            elements.map((item,index)=>{
-              return(
-                <ClickableSVGBox key={index} image={item.image} link={item.link} />
-              )
-            })
-          }
+          {elements.map((item, index) => {
+            return (
+              <ClickableSVGBox
+                key={index}
+                image={item.image}
+                link={item.link}
+              />
+            );
+          })}
         </SimpleGrid>
       </Flex>
-  </Flex>
+    </Flex>
   );
 }

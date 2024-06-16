@@ -21,6 +21,12 @@ import { Lock } from "./components/organism/Home/Lock.jsx";
 import { Light } from "./components/organism/Home/Light.jsx";
 import { NotFound } from "./pages/NotFound.jsx";
 import { Logout } from "./pages/Logout.jsx";
+import { Profile } from "./components/organism/Home/Profile.jsx";
+import { ChangePassword } from "./components/organism/Home/ChangePassword.jsx";
+import { ContactUs } from "./components/organism/Home/ContactUs.jsx";
+import { SetLimits } from "./components/organism/Home/SetLimits.jsx";
+import { TurnOffAlert } from "./components/organism/Home/TurnOffAlert.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -104,20 +110,36 @@ const router = createBrowserRouter([
         path: "light",
         element: <Light />,
       },
+      {
+        path : 'profile',
+        element : <Profile/>,
+      },
+      {
+        path: "change-password",
+        element: <ChangePassword />,
+      },
+      {
+        path: "contact-us",
+        element: <ContactUs />,
+      },
+      {
+        path: "info-reset-password",
+        element: <Info page="resetPassword" url="/homepage" />,
+      },
+      {
+        path: "set-limits",
+        element: <SetLimits />,
+      },
+      {
+        path: "turn-off-alert",
+        element: <TurnOffAlert />,
+      },
     ],
   },
   {
     path: "*",
     element: <NotFound />,
   },
-  // {
-  //   path : 'profile',
-  //   element : <Profile/>
-  // }
-  // {
-  //   path : 'settings',
-  //   element : <Profile/>
-  // }
   {
     path: "logout",
     element: <Logout />,

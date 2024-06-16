@@ -94,7 +94,7 @@ export function Register() {
                 variant="flushed"
                 borderColor={"gray.500"}
                 focusBorderColor="blue.300"
-                {...register("email", { required: true, maxLength: 30 })}
+                {...register("email", { required: true, maxLength: 50 })}
                 isInvalid={errors.email ? true : false}
               />
             </InputForm>

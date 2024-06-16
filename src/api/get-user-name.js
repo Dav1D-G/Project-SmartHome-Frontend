@@ -1,8 +1,7 @@
-export async function getHum(deviceID,access_token)
+export async function getUserName(access_token)
 {
-    const {controlPanelId} = deviceID;
-
-    const url = `http://localhost:3000/api/device/get-sensor-data/${controlPanelId}?key=hum`;
+    const url = `http://localhost:3000/api/user/get-user-name`;
+    //const url = `/backend/api/user/get-user-name`;
     //const url = `/backend/api/device/get-sensor-data/${controlPanelId}?key=hum`;
 
     const response = await fetch(url, {
@@ -11,6 +10,8 @@ export async function getHum(deviceID,access_token)
         'Authorization' : `Bearer ${access_token}`,
       },
     });
+
     const {payload} = await response.json();
-    return payload.toFixed(1);
+    const {name} = payload
+    return name;
 }

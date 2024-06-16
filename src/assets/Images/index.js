@@ -26,8 +26,12 @@ import close_gate from "./dashboard/close-gate.svg";
 import light_off from "./dashboard/light_off.svg";
 import light_on from "./dashboard/light_on.svg";
 import disabled_gate from "./dashboard/disabled-gate.svg";
-import disabled_light from './dashboard/disabled-light.svg'
-import disabled_lock from './dashboard/disabled-lock.svg'
+import disabled_light from './dashboard/disabled-light.svg';
+import disabled_lock from './dashboard/disabled-lock.svg';
+import templimit from './dashboard/templimit.svg';
+import humiditylimit from './dashboard/humiditylimit.svg';
+import agree from './dashboard/agree.svg';
+import disagree from './dashboard/disagree.svg';
 export {
   user,
   lock,
@@ -58,5 +62,9 @@ export {
   light_off,
   disabled_gate,
   disabled_light,
-  disabled_lock
+  disabled_lock,
+  templimit,
+  humiditylimit,
+  agree,
+  disagree
 };

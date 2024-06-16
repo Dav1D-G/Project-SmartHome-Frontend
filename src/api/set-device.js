@@ -2,6 +2,7 @@ export async function setDevice(data)
 {
     const {access_token , device , value} = data;
     const url = "http://localhost:3000/api/device/set-device";
+    //const url = "/backend/api/device/set-device";
     console.log(value);
     const response = await fetch(url, {
       method: "POST",

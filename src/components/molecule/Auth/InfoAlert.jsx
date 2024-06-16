@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 export function InfoAlert({ message, status }) {
   return (
-    <Box position={"absolute"} top={2} opacity={0.8} borderRadius={20}>
+    <Box position={"absolute"} top={20}  opacity={0.8} borderRadius={20}>
       <Alert status={status} borderRadius={20}>
         <AlertIcon />
-        {message}
+          {message}
       </Alert>
     </Box>
   );

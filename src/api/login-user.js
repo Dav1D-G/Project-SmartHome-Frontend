@@ -1,5 +1,6 @@
 export async function loginUser(data) {
     const url = "http://localhost:3000/api/user/login";
+    //const url = "/backend/api/user/login";
   
     const { email , password } = data;
   

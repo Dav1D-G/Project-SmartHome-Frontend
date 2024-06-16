@@ -1,5 +1,7 @@
 export async function forgetPassword(data) {
+
     const url = "http://localhost:3000/api/user/forget-password";
+    //const url = "/backend/api/user/forget-password";
 
     const {email} = data
 

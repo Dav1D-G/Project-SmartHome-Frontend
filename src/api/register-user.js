@@ -2,6 +2,8 @@ import {isPasswordSame} from './../utils/index'
 
 export async function registerUser(data) {
     const url = "http://localhost:3000/api/user/register";
+   
+    //const url = "/backend/api/user/register";
   
     const { email , name , password , confirmPassword } = data;
 
@@ -17,7 +19,7 @@ export async function registerUser(data) {
     });
 
     const {message , statusCode } = await response.json();
-
+    
     if (statusCode == 400) 
       throw new Error(message[0]);
     if (statusCode == 409) 

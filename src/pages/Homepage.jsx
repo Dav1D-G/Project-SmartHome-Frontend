@@ -1,4 +1,4 @@
-import { Container, Spinner, Text } from "@chakra-ui/react";
+import { Container, Spinner} from "@chakra-ui/react";
 import { Flex, Box } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import {
@@ -10,7 +10,7 @@ import { useState } from "react";
 import { isUser } from "./../api/index";
 import { useCookies } from "react-cookie";
 import { useQuery } from "@tanstack/react-query";
-import { ForwardPageButton } from "./../components/molecule/Auth/index";
+import { Unauthorized } from "../components/organism/Home/Unauthorized";
 
 export function Homepage() {
   const [isClickedBurger, setIsClickedBurger] = useState(false);
@@ -53,31 +53,7 @@ export function Homepage() {
             </Box>
           )}
           {isError && (
-            <Flex
-              width={"100%"}
-              justifyContent={"start"}
-              alignItems={"center"}
-              marginTop={30}
-              flexDirection={"column"}
-            >
-              <Flex
-                justifyContent={"space-around"}
-                alignItems={"center"}
-                flexDirection={"column"}
-                width={{ base: "80%", md: "60%", lg: "50%" }}
-                height={"400px"}
-                bg={"white"}
-                borderRadius={50}
-              >
-                <Text marginBottom={15}>Coś poszło nie tak ....</Text>
-                <Text marginBottom={15}>😕</Text>
-                <Text marginBottom={15}>Może zostałeś wylogowany ?</Text>
-                <Text marginBottom={15}>
-                  Może wciąż się nie zweryfikowałeś ?
-                </Text>
-                <ForwardPageButton url="/" />
-              </Flex>
-            </Flex>
+            <Unauthorized />
           )}
           {isLoading && (
             <Flex

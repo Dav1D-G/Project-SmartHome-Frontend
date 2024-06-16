@@ -1,5 +1,8 @@
 export async function registerPanel(data) {
     const register_url = "http://localhost:3000/api/device/register-control-panel";
+    
+    //const register_url = "/backend/api/device/register-control-panel";
+    
     const {panelID , access_token} = data;
 
     const response = await fetch(register_url, {

@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export function AsideMenuOption({ image, text, nav }) {
   return (
     <Flex marginLeft="37%" my={3}>
-      <Link to={`/${nav}`} style={{ textDecoration: "none" }}>
+      <Link to={nav} style={{ textDecoration: "none" }}>
         <Flex>
           <Box mr={5}>
             <Image

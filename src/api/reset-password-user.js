@@ -2,6 +2,7 @@ import {isPasswordSame} from './../utils/index'
 export async function resetPassword(data) {
 
     const url = "http://localhost:3000/api/user/reset-password";
+    //const url = "/backend/api/user/reset-password";
 
     const {password , confirmPassword , tokenLink} = data;
 

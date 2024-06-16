@@ -1,6 +1,7 @@
 export async function getDeviceID(access_token)
 {
     const url = "http://localhost:3000/api/device/get-device-id";
+    //const url = "/backend/api/device/get-device-id";
     const response = await fetch(url, {
       method: "GET",
       headers : {

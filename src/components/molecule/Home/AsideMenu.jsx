@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import {
   dashboard,
   log_out_black,
-  settings,
   user,
 } from "./../../../assets/Images/index";
 import { AsideMenuOption } from "./../../atom/Home/index";
@@ -19,11 +18,11 @@ export function AsideMenu({ isClickedBurger }) {
       bg={"white"}
       transform={`${isClickedBurger ? "translateX(0%)" : "translateX(-100%)"}`}
       transition="transform 1s ease-in-out"
+      zIndex={10}
     >
       {/* Dodanie opcji z NavBar do AsideMenu */}
-      <AsideMenuOption image={dashboard} text="Dashboard" nav="" />
-      <AsideMenuOption image={user} text="Profile" nav="profile" />
-      <AsideMenuOption image={settings} text="Settings" nav="settings" />
+      <AsideMenuOption image={dashboard} text="Dashboard" nav="/homepage"/>
+      <AsideMenuOption image={user} text="Profile" nav="/homepage/profile" />
       <AsideMenuOption image={log_out_black} text="Log out" nav="logout" />
     </Flex>
   );

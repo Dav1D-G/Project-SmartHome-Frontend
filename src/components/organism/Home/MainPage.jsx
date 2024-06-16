@@ -58,7 +58,7 @@ export function MainPage() {
               (isFetching && !isSuccess) && <Spinner size={'lg'} color="blue.500"/>
             }
             {
-              isSuccess && (isRegister ? <MenuDevice /> : <Box mr={{ base: 2, lg: 10 }}>
+              true && (isRegister ? <MenuDevice /> : <Box mr={{ base: 2, lg: 10 }}>
               <Center>
                 <ClickableSVGBox
                   image={plus}

@@ -1,6 +1,7 @@
 export async function verifyUser(data)
 {
     const url = "http://localhost:3000/api/user/verify-user";
+    //const url = "/backend/api/user/verify-user";
 
     const response = await fetch(url, {
         method: "POST",

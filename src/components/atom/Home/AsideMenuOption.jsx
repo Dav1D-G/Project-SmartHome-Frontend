@@ -2,9 +2,9 @@ import { Flex, Box, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export function AsideMenuOption({ image, text, nav }) {
+export function AsideMenuOption({ image, text, nav, onClick }) {
   return (
-    <Flex marginLeft="37%" my={3}>
+    <Flex marginLeft="37%" my={3} onClick={onClick}>
       <Link to={nav} style={{ textDecoration: "none" }}>
         <Flex>
           <Box mr={5}>
@@ -31,4 +31,5 @@ AsideMenuOption.propTypes = {
   image: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   nav: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };

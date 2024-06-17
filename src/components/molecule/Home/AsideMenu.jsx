@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Flex } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import {
@@ -8,6 +9,16 @@ import {
 import { AsideMenuOption } from "./../../atom/Home/index";
 
 export function AsideMenu({ isClickedBurger }) {
+  const [isVisible, setIsVisible] = useState(isClickedBurger);
+
+  useEffect(() => {
+    setIsVisible(isClickedBurger);
+  }, [isClickedBurger]);
+
+  const handleOptionClick = () => {
+    setIsVisible(false);
+  };
+
   return (
     <Flex
       position={"absolute"}
@@ -16,14 +27,13 @@ export function AsideMenu({ isClickedBurger }) {
       top={"80px"}
       width={"100%"}
       bg={"white"}
-      transform={`${isClickedBurger ? "translateX(0%)" : "translateX(-100%)"}`}
+      transform={`${isVisible ? "translateX(0%)" : "translateX(-100%)"}`}
       transition="transform 1s ease-in-out"
       zIndex={10}
     >
-      {/* Dodanie opcji z NavBar do AsideMenu */}
-      <AsideMenuOption image={dashboard} text="Dashboard" nav="/homepage"/>
-      <AsideMenuOption image={user} text="Profile" nav="/homepage/profile" />
-      <AsideMenuOption image={log_out_black} text="Log out" nav="logout" />
+      <AsideMenuOption image={dashboard} text="Dashboard" nav="/homepage" onClick={handleOptionClick} />
+      <AsideMenuOption image={user} text="Profile" nav="/homepage/profile" onClick={handleOptionClick} />
+      <AsideMenuOption image={log_out_black} text="Log out" nav="logout" onClick={handleOptionClick} />
     </Flex>
   );
 }

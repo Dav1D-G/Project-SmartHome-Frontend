@@ -57,13 +57,7 @@ export function SetLimits() {
   }, [isError, infoMessage]);
 
   return (
-    <Container
-      minW={"358px"}
-      maxW={"none"}
-      m={"unset"}
-      p={"unset"}
-      height={"80vh"}
-    >
+    <Container minW={"358px"} maxW={"none"} m={"unset"} p={"unset"} mt={10}>
       <Flex
         height={"100%"}
         justifyContent={"center"}
@@ -75,7 +69,6 @@ export function SetLimits() {
         {isError && <InfoAlert message={infoMessage} status="error" />}
         <Flex
           p={4}
-          mt={100}
           width={{ base: "90%", sm: "80%", md: "60%", lg: "45%", xl: "35%" }}
           borderRadius={"xl"}
           flexDirection={"column"}

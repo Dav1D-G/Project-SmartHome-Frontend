@@ -8,7 +8,14 @@ import { ClickableSVGBox } from "../../molecule/Home/index.js";
 export function MenuDevice() {
   return (
     <Flex flex={1} justifyContent="space-around" marginTop={10}>
-      <Flex flexDirection={"column"} alignItems={"center"} mt={4}>
+      <Flex marginTop={"5%"}
+        bg={"white"}
+        p={4}
+        width={"auto"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        flexDirection="column"
+        borderRadius={20}>
         <Text
           textAlign="center"
           fontSize={{ base: "20px", md: "25px", lg: "30px" }}

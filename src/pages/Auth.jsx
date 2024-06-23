@@ -13,6 +13,7 @@ export function Auth() {
       <Flex height={"100%"} justifyContent={"center"}>
         <Box
           flex={1}
+          overflow={"auto"}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"start"}

@@ -30,8 +30,8 @@ export function Homepage() {
         height={"100vh"}
         bgGradient="linear(to-r, rgba(94,175,250,1), rgba(138,73,247,1))"
       >
-        <Flex height={"100%"} justifyContent={"center"}>
-          {isSuccess && (
+        <Flex height={"100%"} justifyContent={"center"} overflow={"auto"}>
+          
             <Box
               flex={1}
               display={"flex"}
@@ -51,20 +51,7 @@ export function Homepage() {
                 <Outlet />
               </Flex>
             </Box>
-          )}
-          {isError && (
-            <Unauthorized />
-          )}
-          {isLoading && (
-            <Flex
-              width={"100%"}
-              justifyContent={"center"}
-              alignItems={"center"}
-              bgGradient="linear(to-r, rgba(94,175,250,1), rgba(138,73,247,1))"
-            >
-              <Spinner size={"xl"} color="white" />
-            </Flex>
-          )}
+         
         </Flex>
       </Container>
     </>

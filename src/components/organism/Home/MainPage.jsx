@@ -82,22 +82,3 @@ export function MainPage() {
     </Flex>
   );
 }
-
-
-/*<Box ml={{ base: 2, lg: 10 }}>
-<Center>
-<ClickableSVGBox
-  svgUrl={control_panel}
-  linkTo={"main"}
-/>
-</Center>
-<Text
-textAlign="center"
-fontSize={{ base: "15px", md: "15px", lg: "20px" }}
-color={"black.700"}
-className="dm-sans"
-fontWeight={650}
->
-{"Control panel"}
-</Text>
- </Box>  */
